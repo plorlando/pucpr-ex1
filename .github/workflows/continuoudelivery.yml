@@ -1,8 +1,8 @@
-- name: Continuous Delivery Pipeline
-  run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+- name: Continuous Delivery
   on:
     push:
-      branches: [ main ]
+      branches:
+        - main
 
   jobs:
     deliver:
@@ -16,6 +16,5 @@
           with:
             name: projetozipado.zip
             path: |
-              main.py
-              requirements.txt
-              
+              '**.py'
+              requirements.txt             
