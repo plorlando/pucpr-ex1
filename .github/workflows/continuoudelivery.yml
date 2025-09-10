@@ -19,3 +19,13 @@
               main.py
               requirements.txt
               
+    deploy:
+      runs-on: ubuntu-latest
+      needs: deliver
+      steps:
+        - uses: actions/download-artifact@v4
+          with:
+            name: projetozipado.zip
+
+        - name: Display structure of the zip file
+          run: ls -R
