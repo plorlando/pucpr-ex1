@@ -17,5 +17,4 @@
             name: projetozipado.zip
             path: |
               '**.py'
-              requirements.txt
-              
+              requirements.txt             
