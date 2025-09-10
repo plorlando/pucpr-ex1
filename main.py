@@ -9,6 +9,11 @@ class Item(BaseModel):
     price: float
     tax: float = None
 
+class Service(BaseModel):
+    name: str
+    description: str = None
+    cost: float
+    duration: int  # duration in minutes
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
@@ -20,6 +25,10 @@ async def read_item(item_id: int, q: str = None):
 @app.post("/items/")
 async def create_item(item: Item):
     return item
+
+@app.post("/services/")
+async def create_item(service: Service):
+    return service
 
 if __name__ == "__main__":
     import uvicorn
