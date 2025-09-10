@@ -16,7 +16,7 @@
           with:
             name: projetozipado.zip
             path: |
-              '**.py'
+              **.py
               requirements.txt
               
     deploy:
@@ -26,6 +26,5 @@
         - uses: actions/download-artifact@v4
           with:
             name: projetozipado.zip
-
         - name: Display structure of the zip file
           run: ls -R
