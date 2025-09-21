@@ -1,35 +1,46 @@
+import pytest
 from src.main import *
 from unittest.mock import patch
 
 
-def test_root():
-    assert root() == {"message": "Hello World"}
+@pytest.mark.asyncio
+async def test_root():
+    result = await root()
+    assert result == {"message": "Hello World"}
 
 
-def test_funcaoteste():
+@pytest.mark.asyncio
+async def test_funcaoteste():
     with patch('random.randint', return_value=12345):
-        result = funcaoteste()
-
-    assert result ==  {"teste": True, "num_aleatorio": 12345}
+        result = await funcaoteste()
+    assert result == {"teste": True, "num_aleatorio": 12345}
 
 
 def test_create_estudante():
     estudante_teste = Estudante(nome="João", curso="Engenharia", ativo=True)
-    assert estudante_teste == create_estudante()
+    result = create_estudante(estudante_teste)  # Passar o estudante como parâmetro
+    assert result == estudante_teste  # Comparar com o objeto passado
 
 
-def teste_update_estudante_negativo():
-    assert not update_estudante(-1)
+@pytest.mark.asyncio
+async def test_update_estudante_negativo():  # Corrigido nome da função
+    result = await update_estudante(-1)
+    assert not result
 
 
-def teste_update_estudante_positivo():
-    assert update_estudante(10)
+@pytest.mark.asyncio
+async def test_update_estudante_positivo():  # Corrigido nome da função
+    result = await update_estudante(10)
+    assert result
 
 
-def delete_estudante_negativo():
-    assert not delete_estudante(-1)
+@pytest.mark.asyncio
+async def test_delete_estudante_negativo():  # Adicionado prefixo test_
+    result = await delete_estudante(-1)
+    assert not result
 
 
-def delete_estudante_positivo():
-    assert delete_estudante(10)
-
+@pytest.mark.asyncio
+async def test_delete_estudante_positivo():  # Adicionado prefixo test_
+    result = await delete_estudante(10)
+    assert result
