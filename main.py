@@ -1,3 +1,5 @@
+import random
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -29,6 +31,10 @@ async def create_item(item: Item):
 @app.post("/services/")
 async def create_item(service: Service):
     return service
+
+@app.get("/funcaoteste")
+async def funcaoteste():
+    return {"teste": True, "num_aleatorio": random.randint(0, 50000)}
 
 if __name__ == "__main__":
     import uvicorn
