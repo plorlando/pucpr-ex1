@@ -6,7 +6,8 @@
     pull_request:
       branches: [ main ]
 
-  build:
+
+  docker:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
