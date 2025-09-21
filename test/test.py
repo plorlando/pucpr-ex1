@@ -13,7 +13,7 @@ def test_funcaoteste():
     assert result ==  {"teste": True, "num_aleatorio": 12345}
 
 
-def test_create_estudante ():
+def test_create_estudante():
     estudante_teste = Estudante(nome="João", curso="Engenharia", ativo=True)
     assert estudante_teste == create_estudante()
 
