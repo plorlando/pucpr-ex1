@@ -34,7 +34,7 @@ async def create_item(service: Service):
 
 @app.get("/funcaoteste")
 async def funcaoteste():
-    return {"teste": True, "num_aleatorio": random.randint(0, 50000)}
+    return {"teste": True, "num_aleatorio": random.randint(0, 57000)}
 
 if __name__ == "__main__":
     import uvicorn
