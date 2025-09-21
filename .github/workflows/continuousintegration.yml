@@ -3,9 +3,9 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 
 on:
   push:
-    branches: [ main, discord-integration ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, discord-integration ]
+    branches: [ main ]
 
 jobs:
   build:
