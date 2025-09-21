@@ -16,10 +16,11 @@ async def test_funcaoteste():
     assert result == {"teste": True, "num_aleatorio": 12345}
 
 
-def test_create_estudante():
+@pytest.mark.asyncio
+async def test_create_estudante():
     estudante_teste = Estudante(nome="João", curso="Engenharia", ativo=True)
-    result = create_estudante(estudante_teste)  # Passar o estudante como parâmetro
-    assert result == estudante_teste  # Comparar com o objeto passado
+    result = await create_estudante(estudante_teste)  # Adicionar await
+    assert result == estudante_teste
 
 
 @pytest.mark.asyncio
