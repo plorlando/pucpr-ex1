@@ -29,12 +29,12 @@
           with:
             linter: pylint
 
-  discord:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
+    discord:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v5
 
-      - name: Run Discord Webhook
-        uses: johnnyhuy/actions-discord-git-webhook@main
-        with:
-          webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
+        - name: Run Discord Webhook
+          uses: johnnyhuy/actions-discord-git-webhook@main
+          with:
+            webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
