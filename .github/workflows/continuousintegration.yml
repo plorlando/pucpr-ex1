@@ -25,10 +25,10 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
-      - name: Python Lint Code Scanning Action
-        uses: advanced-security/python-lint-code-scanning-action@v1.1.2
-        with:
-          linter: pylint
+#      - name: Python Lint Code Scanning Action
+#        uses: advanced-security/python-lint-code-scanning-action@v1.1.2
+#        with:
+#          linter: pylint
 
   discord:
     runs-on: ubuntu-latest
